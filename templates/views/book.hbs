@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24-Wheels</title>
+    <link rel="logo" href="">
+    <link rel="stylesheet" href="css/book.css">
+    <script src="https://kit.fontawesome.com/afd97fb027.js" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+    <section class="navbar">
+
+        <div class="logo">
+            <span id="sp1">24 -</span>
+            <span id="sp2">Wheels</span>
+
+        </div>
+
+
+        <div id="slidebar">
+            <div id="toggle" onclick="show()">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+            <ul class="ul">
+                <li> <a onclick="show()" href="#home">Home</a></li>
+
+                <li> <a onclick="show()" href="#">Book Now</a></li>
+
+                <li> <a onclick="show()" href="#">Register</a></li>
+
+                <li> <a onclick="show()" href="#">Contact Us</a></li>
+
+            </ul>
+        </div>
+    </section>
+
+
+
+    <section id="home">
+
+        <div class="box1">
+
+            <div class="b1">
+
+                <h1>Make your ride memorable with Us....</h1>
+                <p>
+
+                    Here's your one solution to all your travel hunger and daily issues. Book your vehicle now
+                </p>
+
+            </div>
+
+
+
+            <div class="b2">
+
+                <div class="bb mr">
+
+
+                    <h1>
+                        Let’s hire your ride
+                    </h1>
+                   
+
+                        <div class="input mr">
+
+                            <input required type="text" name="" class="in" id="from">
+                            <label for="" class="lab"> <i class="fa-solid fa-location-dot"></i> Your Location</label>
+                        </div>
+
+                        <div class="input mr">
+
+                            <input required type="text" name="" class="in" id="to">
+                            <label for="" class="lab"> <i class="fa-solid fa-location-dot"></i> Your Destination</label>
+                        </div>
+
+
+                        <BUtton id="btn1" class="btn" onclick="search();">Search</BUtton>
+
+                </div>
+
+
+
+                <div id="load" class="loader"></div>
+
+                <div id="bb2" class="bb2">
+
+                    <div>
+                        <p class="p"> Vehicles are available for your journey from <span class="s" id="sfrom">_</span>
+                            to <span class="s" id="sto">_</span>.</p>
+                    </div>
+                       <form action="/vehiclebook">
+                    <div> <button type="submit" class="btn">Book Now</button></div>
+                    </form>
+
+
+                    <form action="/ride" >
+                        <div> <button class="btn">Self Ride</button></div>
+                    </form>
+
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>function show() {
+            document.getElementById('slidebar').classList.toggle('active');
+        }
+
+
+        function search() {
+
+            var b = true;
+
+            var from = document.getElementById('from').value;
+            console.log(from);
+
+            var to = document.getElementById('to').value;
+            console.log(to);
+
+
+            var f = from.toString();
+            var t = to.toString();
+
+
+
+
+
+
+
+            if (f.length == 0 || t.length == 0) {
+                console.log("empty");
+
+                b = false;
+            }
+
+            if (b == true) {
+
+                var loader = document.getElementById("load").style.display = "block";
+
+
+                setTimeout(() => {
+                    var loader = document.getElementById("load").style.display = "none";
+
+                    var sfrom = document.getElementById('sfrom').innerHTML = from;
+                    var sto = document.getElementById('sto').innerHTML = to;
+                    var bb2 = document.getElementById("bb2").style.display = "block";
+                }, 3000)
+            }
+
+
+        }</script>
+</body>
+
+</html>

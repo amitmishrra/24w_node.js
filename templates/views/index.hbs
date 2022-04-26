@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Account</title>
+</head>
+<link rel="stylesheet" href="css/signin.css">
+
+<body>
+    <section class="navbar">
+
+        <div class="logo">
+            <span id="sp1">24 -</span>
+            <span id="sp2">Wheels</span>
+
+        </div>
+
+
+        <div id="slidebar">
+            <div id="toggle" onclick="show()">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+            <ul class="ul">
+                <li> <a onclick="show()" href="#home">Home</a></li>
+
+                <li> <a onclick="show()" href="#">Book Now</a></li>
+
+                <li> <a onclick="show()" href="#">Register</a></li>
+
+                <li> <a onclick="show()" href="#">Contact Us</a></li>
+
+            </ul>
+        </div>
+    </section>
+
+
+
+
+
+    <section id="book">
+        <div class="container">
+
+            <div class="box1">
+
+
+                <h1>Sign Up with 24-Wheels</h1>
+
+               
+
+<form action="/register" method="post">
+ <div>
+
+
+                    <input class="in" type="text" required name="name" id="name">
+                    <label class="lab" id="l_n" for="">Name</label>
+
+
+                </div>
+                <div>
+
+
+                    <input class="in" type="text" required name="mail" id="mail">
+                    <label class="lab" id="l_m  " for="">E-mail</label>
+
+                </div>
+                <div>
+
+
+                    <input class="in" type="tel" required name="number" id="tel">
+                    <label class="lab" id="l_t" for="">Number</label>
+
+                </div>
+                <div>
+
+
+                    <input class="in" type="password" required name="password" id="pass">
+                    <label id="l_p" class="lab" for="">Password</label>
+
+                </div>
+                <div>
+
+
+                    <input class="in" type="password" required name="confirmpassword" id="pass2">
+                    <label id="l_p" class="lab" for="">Confirm Password</label>
+
+                </div>
+
+
+                <div>
+                    <button class="btn" type="submit" onclick="sig();" id="btn"> Sign In</button></div>
+
+
+
+
+
+</form>
+
+
+
+                <div id="load" class="loader"></div>
+            </div>
+
+
+
+
+
+            <div id="error" class="error">
+                invalid details
+            </div>
+
+            <div id="succ" class="succ" >Account Created Succesfully. Click Here to <a class="a" href="loginn">Log-in</a></div>
+
+
+
+            <div alredy>Already have an account.
+                <Span><a class="a" href="loginn"> Log-in </a></Span>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+
+
+
+
+    {{!-- <script src="back/public/js/signin.js"></script> --}}
+
+<script>
+
+    function show() {
+    document.getElementById('slidebar').classList.toggle('active');
+}
+
+console.log("hellosvfvdfvdf ")
+
+
+
+var x = true;
+
+
+
+function sig() {
+
+    var name = document.getElementById('name').value;
+    console.log(name);
+
+    var mail = document.getElementById('mail').value;
+    console.log(mail);
+
+    var tel = document.getElementById('tel').value;
+    console.log(tel);
+
+    var pass = document.getElementById('pass').value;
+    console.log(pass);
+    var p = pass.toString();
+
+    var pass2 = document.getElementById('pass2').value;
+    console.log(pass);
+    var p2 = pass2.toString();
+
+
+    var n = name.toString();
+    var m = mail.toString();
+    var t = tel.toString();
+
+
+
+
+
+    if (m.includes("@", ".") && (t.includes("1", "2", "3", "4", "5", "6", "7", "8", "9", "0") && (t.length == 10) && (n.length > 3)) && (p===p2) ) {
+        x = true;
+    } else {
+        x = false
+    }
+
+    if (x == false) {
+
+        var loader = document.getElementById("load").style.display = "block";
+
+  setTimeout(() => {
+            var loader = document.getElementById("load").style.display = "none";
+            var error = document.getElementById('error').style.display = "block";
+
+        }, 3000)
+
+
+
+
+
+
+
+    }
+
+
+    if (x == true) {
+
+        var loader = document.getElementById("load").style.display = "block";
+
+        setTimeout(() => {
+            var loader = document.getElementById("load").style.display = "none";
+
+
+            var error = document.getElementById('error').style.display = "none";
+            var succ = document.getElementById('succ').style.display = "block";
+
+        }, 3000)
+
+
+    }
+
+
+}
+</script>
+
+</body>
+
+</html>

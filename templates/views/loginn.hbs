@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<link rel="stylesheet" href="css/login.css">
+
+<body>
+    <section class="navbar">
+
+        <div class="logo">
+            <span id="sp1">24 -</span>
+            <span id="sp2">Wheels</span>
+
+        </div>
+
+
+        <div id="slidebar">
+            <div id="toggle" onclick="show()">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+            <ul class="ul">
+                <li> <a onclick="show()" href="#home">Home</a></li>
+
+                <li> <a onclick="show()" href="#">Book Now</a></li>
+
+                <li> <a onclick="show()" href="#">Register</a></li>
+
+                <li> <a onclick="show()" href="#">Contact Us</a></li>
+
+            </ul>
+        </div>
+    </section>
+
+
+
+
+
+    <section id="book">
+        <div class="container">
+
+            <div class="box1">
+
+
+                <h1>Log in with 24-Wheels</h1>
+
+
+                <form id="form" method="post" action="/book">
+
+                    <div>
+
+
+                        <input class="in" type="email" required name="mail" id="mail">
+                        <label class="lab" id="l_m  " for="">E-mail</label>
+
+                    </div>
+                    <div>
+
+
+                        <input class="in" type="password" required name="password" id="pass">
+                        <label id="l_p" class="lab" for="">Password</label>
+
+                    </div>
+
+
+                    <div>
+                        <button class="btn" id="btn">Log In</button></div>
+
+                    <div id="load" class="loader"></div>
+                </form>
+
+
+
+
+            </div>
+
+
+
+
+
+            <div id="error" class="error">
+                Invalid login or password. Please try again.
+            </div>
+
+
+        </div>
+
+        </div>
+
+
+    </section>
+
+
+
+
+
+
+
+    <script>
+
+function show() {
+    document.getElementById('slidebar').classList.toggle('active');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+</script>
+</body>
+
+</html>
